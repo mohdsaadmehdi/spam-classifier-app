@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Spam Classifier</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+    nav {
+      background-color: #2e2e2e;
+      padding: 15px;
+      margin-bottom: 30px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4CAF50;
+      font-size: 16px;
+    }
+    textarea {
+      width: 60%;
+      height: 120px;
+      background-color: #2e2e2e;
+      color: #ffffff;
+      border: 1px solid #4CAF50;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 30px;
+      font-size: 22px;
+      padding: 15px 25px;
+      background-color: #444;
+      border-radius: 10px;
+      display: inline-block;
+      animation: bounce 1s ease;
+      color: #FFD700;
+    }
+    @keyframes bounce {
+      0%   { transform: scale(0.8); opacity: 0; }
+      50%  { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    a.link-button {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #4CAF50;
+      background-color: #333;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/">🏠 Home</a>
+    <a href="/history">📜 History</a>
+  </nav>
+
+  <h1>📬 Email Spam Classifier (Web)</h1>
+  <form method="POST">
+    <textarea name="message" placeholder="Paste email subject or message here..."></textarea><br>
+    <button type="submit">Check Spam</button>
+  </form>
+
+  {% if result %}
+    <div class="result">{{ result }}</div>
+  {% endif %}
+
+  <a class="link-button" href="/history">📜 Show History</a>
+</body>
+</html>
